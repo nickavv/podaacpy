@@ -15,6 +15,7 @@ python:
   - '3.3'
   - '3.4'
   - '3.5'
+sudo: required
 notifications:
   email: false
 cache:
