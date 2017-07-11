@@ -28,6 +28,9 @@ script:
   - nosetests  --with-coverage --cover-package=podaac -v
 after_success: # Generate coverage reports only on success
   - coveralls
+  - pip install hub-pip==1.1.0
+  - python setup.py hub_pip --DeployHubBdio=false
+  - bash <(curl -s https://copilot.blackducksoftware.com/bash/travis) ./build/blackduck/*.jsonld
 deploy: # Runs on every commit to master branch
   # test pypi
   - provider: pypi
